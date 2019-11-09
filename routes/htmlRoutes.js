@@ -5,7 +5,6 @@ module.exports = function(app) {
 
   app.get("/index", function(req, res) {
     res.render("index", data);
-
   });
   app.get("/browse", function(req, res) {
     db.outfitsDB

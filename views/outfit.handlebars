@@ -11,7 +11,7 @@
                     Swiftly
                 </p>
                 <ul class="menu-list">
-                    <li><a href="/browse">Browse</a></li>
+                    <li><a href="/browse">Start</a></li>
                     <li><a href="/closet">Closet</a></li>
                     <li><a href="/outfit">Outfits</a></li>
                     <li><a href="#">About</a></li>
@@ -24,30 +24,71 @@
 
             <div class="columns ">
                 {{!-- FOR EACH OUTFIT --}}
+                {{#each outfit}}
                 <div class="column ">
                     <div class="box">
                         <div class="tile">
                             <div class="tile is-parent is-vertical">
                                 <section class="tile is-child">
-                                    <img src="{selectedTop.url}" />
+                                    <img src="{{selectedTop.url}}" />
                                 </section>
                                 <section class="tile is-child">
-                                    <img src="{selectedBottoms.url}" />
+                                    <img src="{{selectedBottoms.url}}" />
                                 </section>
                             </div>
                             <div class="tile is-parent is-vertical">
                                 <section class="tile is-child">
-                                    <img src="{selectedDress.url}" />
+                                    <img src="{{selectedDress.url}}" />
                                 </section>
                                 <section class="tile is-child">
-                                    <img src="{sectedShoes.url}" />
+                                    <img src="{{sectedShoes.url}}" />
                                 </section>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                {{/each}}
             </div>
         </div>
     </div>
 </main>
+<style>
+    main {
+        width: 90%;
+    }
+
+    header {
+        margin-top: 50px;
+    }
+
+    .box {
+        padding: 0;
+        margin-top: 50px;
+        border: solid;
+    }
+
+    .tile {
+        padding: 0;
+    }
+
+    #swiftly {
+        font-size: 2.5em;
+        margin: auto, 0;
+        transform: rotate(-90deg);
+        padding: 10px;
+        margin-top: 100px;
+    }
+
+    .menu img {
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .menu a {
+        font-size: 1.5em;
+        margin: auto, 0;
+        transform: rotate(-90deg);
+        padding: 10px;
+        margin-top: 40px;
+    }
+</style>
