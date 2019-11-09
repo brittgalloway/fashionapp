@@ -4,6 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     tops: DataTypes.STRING,
     pants: DataTypes.STRING,
     shoes: DataTypes.STRING
+    
   });
   return Outfit;
 };
