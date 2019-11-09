@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
 
-    "password": "Putain815",
+
     "database": "outfitsDB",
 
     "host": "localhost",
@@ -13,10 +13,6 @@
   "test": {
     "username": "root",
 
-
-    "password": "Putain815",
-
-  
     "database": "testdb",
 
     "host": "localhost",

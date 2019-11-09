@@ -1,0 +1,41 @@
+<main>
+    <div class="columns ">
+        <div class="column is-narrow">
+            <aside class="menu">
+                <p class="menu-label">
+                    <a href="/">
+                        <img src="..\public\images\swiftly-06wingLogo.svg" />
+                    </a>
+                </p>
+                <p id="swiftly" class="menu-label">
+                    Swiftly
+                </p>
+                <ul class="menu-list">
+                    {{!-- these should GET on without going to a new page --}}
+                    <li><a>Tops</a></li>
+                    <li><a>Bottoms</a></li>
+                    <li><a>Dresses</a></li>
+                    <li><a>Shoes</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <div class="column ">
+            <h1 id="searchClothes" class="title is-1 has-text-centered ">
+                {{!-- varible for tab choosen, ex "clothes" is all, if Tops choosen should read "Tops" --}}
+                Clothes
+            </h1>
+            <div class="columns is-multiline">
+                {{!-- for each item --}}
+                <div class="column is-one-quarter">
+                    <div class="box">
+                        <section>
+                            <img src="{item.url}" />
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>

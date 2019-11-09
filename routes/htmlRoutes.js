@@ -2,48 +2,27 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page/home
-  app.get("/", function(req, res) {
-    console.log('db.Outfit.findAll');
-    db.Outfit.findAll({}).then(function(dbOutfits) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbOutfits
-      });
-    }).catch((error) => console.error(error));
-  });
 
-  // Loads all clothes on browse page
+  app.get("/index", function(req, res) {
+    res.render("index", data);
+
+  });
   app.get("/browse", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
+    db.outfitsDB
+      .findOne({ where: { id: req.params.id } })
+      .then(function(outfitsDB) {
+        res.render("browse", {
+          example: outfitsDB
+        });
       });
-    });
   });
-  //loads saved clothing items
-  app.get("/closet", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+  app.get("/closer", function(req, res) {
+    res.render("closet", data);
   });
-  //loads saved outfits
-  app.get("/outfit", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+  app.get("/outfits", function(req, res) {
+    res.render("outfits", data);
   });
-
-  // Render 404 page for any unmatched routes
+  // Render 404 page
   app.get("*", function(req, res) {
     res.render("404");
   });

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- {{!-- FONT AWESOME LINK --}} -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/styles/styles.css"
+      media="screen"
+      title="no title"
+      charset="utf-8"
+    />
+    <title>Swiftly, Reinvent Yourself</title>
+  </head>
+  <body>
+    <div class="modal is-active" id="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img
+                id="matchPhoto"
+                src="https://bulma.io/images/placeholders/1280x960.png"
+                alt="Placeholder image"
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4" id="matchName"></p>
+              </div>
+            </div>
+
+            <div class="content">
+              <p>This should be a comment from the database!</p>
+            </div>
+          </div>
+        </div>
+        <article class="media">
+          <div class="media-content">
+            <div class="field">
+              <p class="control">
+                <textarea
+                  class="textarea"
+                  placeholder="Add a comment..."
+                ></textarea>
+              </p>
+            </div>
+            <nav class="level">
+              <div class="level-left">
+                <div class="level-item">
+                  <a class="button is-info">Submit</a>
+                </div>
+              </div>
+              <div class="level-right">
+                <div class="level-item">
+                  <label class="checkbox">
+                    <input type="checkbox" /> Press enter to submit
+                  </label>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
