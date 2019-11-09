@@ -1,5 +1,8 @@
 DROP DATABASE IF EXISTS outfitsDB;
 CREATE DATABASE outfitsDB;
 
+<<<<<<< HEAD
+=======
 USE outfitsDB;
 
+>>>>>>> 5725f81d9b96511d52c3cc0c77b9f589a4060a24
