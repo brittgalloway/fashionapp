@@ -19,9 +19,7 @@ module.exports = function(app) {
   app.get("/closer", function(req, res) {
     res.render("closet", data);
   });
-  app.get("/outfits", function(req, res) {
-    res.render("outfits", data);
-  });
+  
   // Render 404 page
   app.get("*", function(req, res) {
     res.render("404");
