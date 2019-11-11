@@ -2,20 +2,40 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {{!-- FONT AWESOME LINK --}}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- {{!FONT AWESOME LINK}} -->
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  {{!-- BULMA --}}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+  <link rel="stylesheet" href="styles\styles.css" media="screen" title="no title" charset="utf-8" />
   <title>Swiftly, Reinvent Yourself</title>
 </head>
 
 <body>
-  {{{body}}}
+  <div class="columns is-gapless">
+    <div class="column is-1">
+      <aside class="menu">
+        <p class="menu-label">
+          <a href="/">
+            <img src="images\swiftly-06wingLogo.svg" />
+          </a>
+        </p>
+        <p id="swiftly" class="menu-label">
+          Swiftly
+        </p>
+        <ul class="menu-list">
+          <li><a href="/browse">Start</a></li>
+          <li><a href="/closet">Closet</a></li>
+          <li><a href="/buildIt">Build Outfit</a></li>
+          <li><a>About</a></li>
+        </ul>
+      </aside>
+    </div>
+    {{{body}}}
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/index.js"></script>
 </body>
 
 </html>

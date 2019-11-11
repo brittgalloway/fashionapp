@@ -3,6 +3,11 @@
         width: 90%;
     }
 
+    nav {
+        margin-left: 36%;
+        font-size: 1.5em;
+    }
+
     header {
         margin-top: 50px;
     }
@@ -10,19 +15,16 @@
     .box {
         padding: 0;
         margin-top: 50px;
+        width: 15em;
+        height: 15em;
         border: solid;
+        overflow: hidden;
     }
 
-    .tile {
-        padding: 0;
-    }
-
-    #swiftly {
-        font-size: 2.5em;
-        margin: auto, 0;
-        transform: rotate(-90deg);
-        padding: 10px;
-        margin-top: 100px;
+    span.menu-list a {
+        font-size: 1.25em;
+        margin: 0;
+        transform: rotate(0deg);
     }
 
     .menu img {
@@ -30,101 +32,132 @@
         margin-top: 20px;
     }
 
-    .menu a {
+    .menu-list a {
         font-size: 1.5em;
         margin: auto, 0;
         transform: rotate(-90deg);
         padding: 10px;
-        margin-top: 40px;
+        margin-top: 30px;
     }
 </style>
+
 <main>
-    <div class="columns ">
-        <div class="column is-narrow">
-            <aside class="menu">
-                <p class="menu-label">
-                    <a href="/">
-                        <img src="..\public\images\swiftly-06wingLogo.svg" />
-                    </a>
-                </p>
-                <p id="swiftly" class="menu-label">
-                    Swiftly
-                </p>
-                <ul class="menu-list">
-                    {{!-- these should GET on without going to a new page --}}
-                    <li><a>Tops</a></li>
-                    <li><a>Bottoms</a></li>
-                    <li><a>Dresses</a></li>
-                    <li><a>Shoes</a></li>
-                </ul>
-            </aside>
-        </div>
-
-        <div class="column ">
-            <h1 id="searchClothes" class="title is-1 has-text-centered ">
-                {{!-- varible for tab choosen, ex "clothes" is all, if Tops choosen should read "Tops" --}}
-                Clothes
-            </h1>
-            <div class="columns is-multiline">
-                {{!-- for each item --}}
-                {{#each item}}
-                <div class="column is-one-quarter">
-                    <div class="box">
-                        <section>
-                            <img src="{{item.url}}" />
-                        </section>
-                    </div>
-                </div>
-                {{/each}}
-                <div class="modal is-active" id="modal">
-                    <div class="modal-background"></div>
-                    <div class="modal-content">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img id="matchPhoto" src="https://bulma.io/images/placeholders/1280x960.png"
-                                        alt="Placeholder image" />
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4" id="matchName"></p>
-                                    </div>
-                                </div>
-
-                                <div class="content">
-                                    <p>This should be a comment from the database!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <article class="media">
-                            <div class="media-content">
-                                <div class="field">
-                                    <p class="control">
-                                        <textarea class="textarea" placeholder="Add a comment..."></textarea>
-                                    </p>
-                                </div>
-                                <nav class="level">
-                                    <div class="level-left">
-                                        <div class="level-item">
-                                            <a class="button is-info">Submit</a>
-                                        </div>
-                                    </div>
-                                    <div class="level-right">
-                                        <div class="level-item">
-                                            <label class="checkbox">
-                                                <input type="checkbox" /> Press enter to submit
-                                            </label>
-                                        </div>
-                                    </div>
-                                </nav>
-                            </div>
-                        </article>
-                    </div>
-                    <button class="modal-close is-large" aria-label="close"></button>
-                </div>
+    <nav class="navbar is-transparent is">
+        <div class="navbar-menu ">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/browse/tops">
+                    Tops
+                </a>
+                <a class="navbar-item" href="/browse/bottoms">
+                    Bottoms
+                </a>
+                <a class="navbar-item" href="/browse/dresses">
+                    Dresses
+                </a>
+                <a class="navbar-item" href="/browse/shoes">
+                    Shoes
+                </a>
             </div>
         </div>
+    </nav>
+    <div class="column ">
+        <h1 id="searchClothes" class="title is-1 has-text-centered ">
+            {{!-- varible for tab choosen, ex "clothes" is all, if Tops choosen should read "Tops" --}}
+            Clothes
+        </h1>
+        <div class="columns is-multiline">
+            {{!-- for each top --}}
+            {{#each Tops}}
+            <div class="column is-one-quarter">
+                <div class="box">
+                    <section>
+                        <img src={{this.url}} />
+
+                    </section>
+                </div>
+            </div>
+            {{/each}}
+            {{!-- for each bottom--}}
+            {{#each Pants}}
+            <div class="column is-one-quarter">
+                <div class="box">
+                    <section>
+                        <img src={{this.url}} />
+
+                    </section>
+                </div>
+            </div>
+            {{/each}}
+            {{!-- for each dress--}}
+            {{#each Dresses}}
+            <div class="column is-one-quarter">
+                <div class="box">
+                    <section>
+                        <img src={{this.url}} />
+
+                    </section>
+                </div>
+            </div>
+            {{/each}}
+            {{!-- for each shoe--}}
+            {{#each Shoes}}
+            <div class="column is-one-quarter">
+                <div class="box">
+                    <section>
+                        <img src={{this.url}} />
+
+                    </section>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img id="matchPhoto" src="images/1-15-2017.jpg" alt="Placeholder image" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4"></p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <p>This should be a comment from the database!</p>
+                    </div>
+                </div>
+            </div>
+            <article class="media">
+                <div class="media-content">
+                    <div class="field">
+                        <p class="control">
+                            <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                        </p>
+                    </div>
+                    <nav class="level">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <a class="button is-info">Submit</a>
+                            </div>
+                        </div>
+                        <div class="level-right">
+                            <div class="level-item">
+                                <label class="checkbox">
+                                    <input type="checkbox" /> Press enter to submit
+                                </label>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </article>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
     </div>
 </main>

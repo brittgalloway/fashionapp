@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Closet</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- {{!-- FONT AWESOME LINK --}} -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="..\public\styles\styles.css"
+      media="screen"
+      title="no title"
+      charset="utf-8"
+    />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body>
+    <style>
+      img {
+        margin-right: auto;
+        margin-left: auto;
+      }
+      button {
+        padding: 1.5em;
+        margin: 2em;
+      }
+    </style>
+    <div class="columns is-gapless">
+      <div class="column is-1">
+        <aside class="menu">
+          <p class="menu-label">
+            <a href="/">
+              <img src="..\public\images\swiftly-06wingLogo.svg" />
+            </a>
+          </p>
+          <p id="swiftly" class="menu-label">
+            Swiftly
+          </p>
+          <ul class="menu-list">
+            <li><a>Start</a></li>
+            <li><a>Closet</a></li>
+            <li><a>Outfits</a></li>
+            <li><a>About</a></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="column is-11">
+        <h1 class="title is-1 has-text-centered">Build an Outfit</h1>
+
+        <div id="tops" class="w3-content w3-display-container">
+          <img
+            class="mySlides1"
+            src="..\public\images\1-15-2017.jpg"
+            style="height:250px"
+          />
+          <img
+            class="mySlides1"
+            src="..\public\images\Capture.PNG"
+            style="height:250px"
+          />
+          <img
+            class="mySlides1"
+            src="..\public\images\supreme.jpg"
+            style="height:250px"
+          />
+
+          <button
+            class="button is-rounded w3-display-left"
+            onclick="plusDivs(-1, 0)"
+          >
+            &#10094;
+          </button>
+          <button
+            class="button is-rounded w3-display-right"
+            onclick="plusDivs(1, 0)"
+          >
+            &#10095;
+          </button>
+        </div>
+
+        <div id="bottoms" class="w3-content w3-display-container">
+          <img
+            class="mySlides2"
+            src="..\public\images\1-15-2017.jpg"
+            style="height:250px;"
+          />
+          <img
+            class="mySlides2"
+            src="..\public\images\Capture.PNG"
+            style="height:250px"
+          />
+          <img
+            class="mySlides2"
+            src="..\public\images\supreme.jpg"
+            style="height:250px"
+          />
+          <button
+            class="button is-rounded w3-display-left"
+            onclick="plusDivs(-1, 1)"
+          >
+            &#10094;
+          </button>
+          <button
+            class="button is-rounded w3-display-right"
+            onclick="plusDivs(1, 1)"
+          >
+            &#10095;
+          </button>
+        </div>
+
+        <div id="dresses" class="w3-content w3-display-container">
+          <img
+            class="mySlides3"
+            src="..\public\images\1-15-2017.jpg"
+            style="height:250px"
+          />
+          <img
+            class="mySlides3"
+            src="..\public\images\Capture.PNG"
+            style="height:250px"
+          />
+          <img
+            class="mySlides3"
+            src="..\public\images\supreme.jpg"
+            style="height:250px"
+          />
+          <button
+            class="button is-rounded w3-display-left"
+            onclick="plusDivs(-1, 2)"
+          >
+            &#10094;
+          </button>
+          <button
+            class="button is-rounded w3-display-right"
+            onclick="plusDivs(1, 2)"
+          >
+            &#10095;
+          </button>
+        </div>
+        <div id="shoes" class="w3-content w3-display-container">
+          <img
+            class="mySlides4"
+            src="..\public\images\1-15-2017.jpg"
+            style="height:250px;"
+          />
+          <img
+            class="mySlides4"
+            src="..\public\images\Capture.PNG"
+            style="height:250px"
+          />
+          <img
+            class="mySlides4"
+            src="..\public\images\supreme.jpg"
+            style="height:250px"
+          />
+          <button
+            class="button is-rounded w3-display-left"
+            onclick="plusDivs(-1, 3)"
+          >
+            &#10094;
+          </button>
+          <button
+            class="button is-rounded w3-display-right"
+            onclick="plusDivs(1, 3)"
+          >
+            &#10095;
+          </button>
+        </div>
+        <div class="columns">
+          <div class="column is-offset-3">
+            <button class="button is-rounded">Save this Look!</button>
+          </div>
+          <div class="column">
+            <button class="button is-rounded">Go to Closet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var slideIndex = [1, 1, 1, 1];
+      var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"];
+      showDivs(1, 0);
+      showDivs(1, 1);
+      showDivs(1, 2);
+      showDivs(1, 3);
+
+      function plusDivs(n, no) {
+        showDivs((slideIndex[no] += n), no);
+      }
+
+      function showDivs(n, no) {
+        var i;
+        var x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {
+          slideIndex[no] = 1;
+        }
+        if (n < 1) {
+          slideIndex[no] = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex[no] - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>
