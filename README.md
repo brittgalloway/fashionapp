@@ -18,7 +18,7 @@ If you are running localally you must first
 run:<br> - sequelize db:seed:all <br>in the command line to populate database.
 
 If you are on the deployed website:
-https://nameless-escarpment-47394.herokuapp.com/<br>
+https://stormy-earth-44315.herokuapp.com/<br>
 From the home page you can navigate to the "browse/all page and toggle between different shirts/tops, pants/skirts/shorts, dresses, and shoes.
 <br>When your favorite items are choosen click the "Save this Look!" button. <br>You can either make a new outfit, or navigate to the Closet page.
 <br> Here you will see outfits created by you and others!
